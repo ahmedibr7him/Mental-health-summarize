@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;400;600;800&family=Roboto:wght@300;400;500;700&display=swap');
+
+@theme {
+  --font-ar: 'Cairo', sans-serif;
+  --font-en: 'Roboto', sans-serif;
+}
+
+
+
+@theme {
+  --breakpoint-xs:200px;
+  --breakpoint-sm: 300px;
+  --breakpoint-msm: 400px;
+  --breakpoint-md: 599px;
+  --breakpoint-mmd: 700px;
+  --breakpoint-lg: 900px;
+  --breakpoint-mlg:1024px;
+  --breakpoint-xl: 1280px;
+}
+*{
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  user-select: none;
+  font-display: swap;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:root {
+  --color-bg: oklch(92.9% 0.013 255.508);
+  --color-text: oklch(70.7% 0.022 261.325);
+  --color-primary: oklch(27.9% 0.041 260.031);
+  --color-secondary: oklch(44.6% 0.043 257.281);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --color-bg: oklch(17% 0.02 255);
+  --color-text:oklch(70.7% 0.022 261.325);
+  --color-primary: oklch(60% 0.15 250);
+  --color-secondary: oklch(65% 0.12 250);
+}
+
+
+@theme {
+  --color-bg: var(--color-bg);
+  --color-text: var(--color-text);
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+}
+
+
+
+
