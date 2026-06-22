@@ -1,5 +1,5 @@
 import LinksPagsLarge from "./LinksPagsLarge";
-import { assesst } from "../../../public/assesst";
+import { assesst } from "../../../public/assets";
 import { useContext } from "react";
 import { LinksContext } from "../../Context/LinksContext";
 import { useNavigate } from "react-router-dom";

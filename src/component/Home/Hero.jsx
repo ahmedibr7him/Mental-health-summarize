@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { assesst } from '../../../public/assesst'
+import { assesst } from '../../../public/assets'
 import { useNavigate } from "react-router-dom"
 import { useTranslation } from "react-i18next";
 

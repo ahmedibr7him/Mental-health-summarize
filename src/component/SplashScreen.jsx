@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
-import { assesst } from "../../public/assesst"
+import { assesst } from "../../public/assets"
 
 const SplashScreen = ({ onFinish }) => {
   const [animate, setAnimate] = useState(false)

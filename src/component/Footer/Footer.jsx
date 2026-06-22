@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { assesst } from "../../../public/assesst";
+import { assesst } from "../../../public/assets";
 import { Link } from "react-router-dom";
 
 export const Footer = () => {
