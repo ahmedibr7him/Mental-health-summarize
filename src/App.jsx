@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import supabase from "./supabase/supabase.jsx";
 import { setUser } from "./Redux/Auth/AuthSLice";
 import { LinksContext } from "../src/Context/LinksContext.jsx";
-import LocaleLayout from "./I18n/LocaleLayOut/LocaleLayOut.jsx";
+import LocaleLayout from "./I18n/LocaleLayOut/LocaleLayout.jsx";
 import Home from "./pages/Home";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact";
