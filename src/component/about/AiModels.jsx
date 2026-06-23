@@ -49,7 +49,7 @@ const AiModels = () => {
         >
           <img src={assesst.chat} alt="gpt" className='w-14 h-14 object-contain'/>
           <p className='text-xl md:text-2xl text-primary font-bold'>
-            GPT-5.1
+            Llama 3.3 70B
           </p>
         </motion.div>
       </div>

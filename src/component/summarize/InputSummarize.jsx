@@ -57,10 +57,9 @@ const InputSummarize = () => {
         viewport={{ once: false }}
         className="w-full flex flex-col items-center mt-20 px-4"
       >
-        <form className="w-full max-w-3xl flex flex-col gap-4" onSubmit={handleSubmit}>
+        <form className="w-full max-w-2xl flex flex-col gap-4" onSubmit={handleSubmit}>
           
           <div className="flex flex-col md:flex-row gap-4 items-center w-full">
-            {/* الحقول (تتحول لـ w-full في الموبايل) */}
             <div className="flex-grow w-full">
               {typeInput === "text" && (
                 <input
@@ -72,7 +71,7 @@ const InputSummarize = () => {
                 />
               )}
 
-              {(typeInput === "file" || (typeInput === "microphone" && audioURL)) && !audioURL && (
+              {typeInput === "file" && !audioURL && (
                 <input
                   type="file"
                   accept="audio/*"
@@ -85,7 +84,7 @@ const InputSummarize = () => {
                 />
               )}
 
-              {audioURL && (
+              {(typeInput === "microphone" || typeInput === "file") && audioURL && (
                 <div className="w-full h-12 flex items-center justify-between gap-2 px-4 bg-white rounded-2xl shadow-lg">
                   <audio controls src={audioURL} className="w-full h-8" />
                   <button type="button" onClick={() => { setAudioURL(null); setAudioBlob(null); setAudioFile(null); }}>
@@ -95,7 +94,6 @@ const InputSummarize = () => {
               )}
             </div>
 
-            {/* SELECT */}
             <select
               value={typeInput}
               onChange={(e) => {
@@ -114,14 +112,14 @@ const InputSummarize = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full md:w-50 h-10 rounded-3xl text-white bg-primary font-bold hover:bg-white hover:text-primary border border-primary transition-all"
+              className="w-full md:w-50 h-10 rounded-3xl text-white bg-primary font-bold hover:bg-white hover:text-primary border border-primary transition-all cursor-pointer"
             >
               {loading ? "Loading..." : t("Analyze")}
             </button>
           </div>
         </form>
 
-        <div className="mt-6">
+        <div className="mt-6 w-full max-w-2xl">
           <VoiceRecorder onRecordComplete={handleRecordComplete} />
         </div>
       </motion.div>
@@ -129,11 +127,35 @@ const InputSummarize = () => {
       {/* RESULT */}
       {analysis && (
         <motion.div className="w-full flex justify-center mt-10 px-4">
-          <div className="w-full max-w-3xl bg-white shadow-xl rounded-3xl p-6 space-y-5">
+          <div className="w-full max-w-3xl w-full bg-white shadow-xl rounded-3xl p-6 space-y-5">
             <h2 className="text-3xl font-bold text-primary text-center">Clinical Analysis</h2>
-            {/* ... عرض البيانات كما هي ... */}
-            <p className="text-secondary">{analysis.session_summary}</p>
-            {/* باقي التفاصيل */}
+            
+            {/* عرض كافة التفاصيل */}
+            {[
+              { title: "Session Summary", value: analysis.session_summary },
+              { title: "Suggested Diagnosis", value: analysis.suggested_diagnosis },
+              { title: "Emotional State", value: analysis.emotional_state },
+              { title: "Anxiety Level", value: `${analysis.anxiety_level} (${analysis.anxiety_score}/10)` },
+              { title: "Risk Level", value: analysis.risk_level },
+              { title: "Main Complaint", value: analysis.main_complaint },
+              { title: "Therapist Focus", value: analysis.therapist_focus },
+              { title: "Recommendations", value: analysis.recommendations },
+              { title: "Risk Details", value: analysis.risk_details },
+            ].map((item, idx) => (
+              <div key={idx}>
+                <h3 className="font-bold text-lg text-primary">{item.title}</h3>
+                <p className="text-secondary mt-1">{item.value}</p>
+              </div>
+            ))}
+
+            <div>
+              <h3 className="font-bold text-lg text-primary">Detected Symptoms</h3>
+              <ul className="list-disc pl-5 mt-1 text-secondary">
+                {analysis.detected_symptoms?.map((symptom, index) => (
+                  <li key={index}>{symptom}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </motion.div>
       )}
