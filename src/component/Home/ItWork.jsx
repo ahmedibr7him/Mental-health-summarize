@@ -15,7 +15,7 @@ const ItWork = () => {
         className='flex flex-col w-full items-center mb-16'
       >
         <h1 className='text-3xl md:text-5xl lg:text-[60px] font-bold text-primary text-center'>
-          {t("How")} <span className='text-secondary'>{t("It Works")}</span>
+          {t("How")} <span className='text-secondary'>{t("It Work")}</span>
         </h1>
         <p className='text-text text-center font-bold text-sm md:text-base mt-4'>
           {t("Follow these steps to get fast and accurate AI summaries")}
