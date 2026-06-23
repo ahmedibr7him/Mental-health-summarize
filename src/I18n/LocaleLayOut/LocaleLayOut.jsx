@@ -5,7 +5,7 @@ import i18n from "../i18n";
 import Navbar from "../../component/NavBar/Navbar";
 import LinksProvider from "../../Context/LinksContext";
 import { Footer } from "../../component/Footer/Footer";
-const LocaleLayOut = () => {
+const LocaleLayout  = () => {
 
   const location = useLocation();
 
@@ -38,4 +38,4 @@ const LocaleLayOut = () => {
   )
 };
 
-export default LocaleLayOut;
+export default LocaleLayout ;

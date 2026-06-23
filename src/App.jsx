@@ -6,7 +6,7 @@ import supabase from "./supabase/supabase.jsx";
 import { setUser } from "./Redux/Auth/AuthSLice";
 import { LinksContext } from "../src/Context/LinksContext.jsx";
 
-import LocaleLayOut from "./i18n/LocaleLayout/LocaleLayOut.jsx"
+import LocaleLayout from "./i18n/LocaleLayout/LocaleLayout";
 import Home from "./pages/Home";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact";
@@ -51,7 +51,7 @@ const App = () => {
             <div className="overflow-x-hidden bg-bg">
                 <Routes>
                     <Route path="/" element={<Navigate to="/home/en" replace />} />
-                    <Route path="/*" element={<LocaleLayOut />}>
+                    <Route path="/*" element={<LocaleLayout />}>
                         {/* استخدام شرط التحقق من الـ loading مع الـ Routing */}
                         {!loading && <Route path="home/:lang" element={<Home />} />}
                         <Route path="about/:lang" element={<About />} />
