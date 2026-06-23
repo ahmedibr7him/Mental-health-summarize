@@ -1,7 +1,7 @@
 import { Outlet, useParams, Navigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import i18n from "../i18n";
+import i18n from "../I18n.jsx";
 import Navbar from "../../component/NavBar/Navbar";
 import LinksProvider from "../../Context/LinksContext";
 import { Footer } from "../../component/Footer/Footer";
