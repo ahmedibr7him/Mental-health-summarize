@@ -38,4 +38,4 @@ const LocaleLayout  = () => {
   )
 };
 
-export default LocaleLayout ;
+export default LocaleLayout;
