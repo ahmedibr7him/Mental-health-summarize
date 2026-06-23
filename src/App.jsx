@@ -6,7 +6,7 @@ import supabase from "./supabase/supabase.jsx";
 import { setUser } from "./Redux/Auth/AuthSLice";
 import { LinksContext } from "../src/Context/LinksContext.jsx";
 
-import LocaleLayOut from "./i18n/LocaleLayout/LocaleLayOut.jsx";
+import LocaleLayOut from "./i18n/LocaleLayout/LocaleLayOut.jsx"
 import Home from "./pages/Home";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact";
