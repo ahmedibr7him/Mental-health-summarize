@@ -1,6 +1,5 @@
 import AboutUs from '../component/about/AboutUs'
 import AiModels from '../component/about/AiModels'
-
 const About = () => {
   return (
     <>
